@@ -1,3 +1,5 @@
+![panda-house-logo](https://github.com/LighterThanAir7/Panda-House/assets/136199576/e42cd3df-9455-4c2c-ab9a-eb931f16d5cc)
+
 # Panda House
 
 Panda House was made as a college project where we had to create a restaurant-like website with user registration and ordering system. I chose to recreate [Restoran Panda's website](https://restoranpanda.hr/index.php) and work on top of it. The project leverages the power of modern web technologies to provide a seamless user experience, with various backend functionalities for robust performance.
