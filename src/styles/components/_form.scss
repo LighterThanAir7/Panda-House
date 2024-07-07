@@ -1,0 +1,98 @@
+@use "../abstract" as *;
+
+.form {
+  width: 440px;
+  h4 {
+    padding-bottom: size(8);
+    border-bottom: 1px solid clr(neutral, 300);
+    margin-bottom: size(20);
+  }
+  &__label {
+    font-weight: 600;
+    display: block;
+    &--regular {
+      font-weight: 500;
+    }
+    &--custom-checkbox {
+      display: flex;
+      align-items: center;
+      gap: size(8);
+      font-size: fs(300);
+
+    }
+  }
+  &__input {
+    font-weight: 400;
+    margin-top: size(6);
+    display: block;
+    padding: size(8) size(16);
+    border: 1px solid clr(neutral, 300);
+    border-radius: size(8);
+    width: 100%;
+    &--wide-text {
+      letter-spacing: 2px;
+    }
+    &--textarea {
+      resize: none;
+      min-height: 200px;
+    }
+  }
+  &__row {
+    display: flex;
+    gap: size(20);
+  }
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    &:checked + .custom-checkbox {
+      background-color: clr(secondary, 400);
+    }
+    &:checked + .custom-checkbox::after {
+      opacity: 1;
+      border-color: clr(neutral, 50);
+    }
+  }
+  &__register {
+    font-weight: 600;
+    text-decoration: underline;
+    color: clr(secondary, 500);
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+    &:hover {
+      color: clr(secondary, 700);
+    }
+  }
+}
+
+.error-message {
+  color: clr(primary, 500);
+  font-size: fs(200);
+  margin-top: size(4);
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px; /* Veličina checkboxa */
+  height: 20px; /* Veličina checkboxa */
+  background-color: transparent;
+  border: 2px solid clr(secondary, 400); /* Narančasti border */
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  &::after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid clr(secondary, 400);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: 250ms ease;
+  }
+}

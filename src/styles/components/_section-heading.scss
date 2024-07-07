@@ -1,0 +1,24 @@
+@use "../abstract" as *;
+
+.section-heading {
+  max-width: 660px;
+  margin-bottom: size(40);
+  &__overline {
+    position: relative;
+    width: fit-content;
+    color: clr(secondary, 400);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 15px);
+      background: clr(secondary, 400);
+      width: 90px;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+  }
+  &__text {
+
+  }
+}

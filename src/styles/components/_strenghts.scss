@@ -1,0 +1,15 @@
+@use "../abstract" as *;
+
+.strenght {
+  &__icon {
+    olor: clr(secondary, 500);
+    font-size: fs(900);
+    padding-bottom: size(24);
+  }
+  &__img {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    max-width: 380px;
+  }
+}

@@ -1,0 +1,35 @@
+@use "../abstract" as *;
+
+.profile {
+  &__section {
+    margin-bottom: size(40);
+    &-title {
+      padding-bottom: size(12);
+      border-bottom: 2px solid clr(secondary, 400);
+    }
+  }
+  &__row {
+    @include d-flex($g: size(20));
+    label {
+      width: 100%;
+    }
+  }
+  &__edit, &__save, &__cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: fs(600);
+    border-radius: size(8);
+    color: clr(neutral, 50);
+  }
+  &__edit, &__save {
+    background-color: clr(secondary, 400);
+    border: 1px solid clr(secondary, 400);
+  }
+  &__cancel {
+    background-color: clr(neutral, 400);
+    border: 1px solid clr(neutral, 400);
+  }
+}

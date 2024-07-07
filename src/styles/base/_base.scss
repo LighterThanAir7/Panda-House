@@ -1,0 +1,75 @@
+@use "../abstract" as *;
+
+body {
+  font-family: $ff-primary;
+  font-weight: 500;
+  font-size: fs(400);
+  color: clr(neutral, 500);
+  line-height: 32px;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: clr(neutral, 900);
+}
+
+h1 {
+  font-size: fs(950);
+  font-weight: 700;
+  margin-bottom: size(24);
+  line-height: 74px;
+}
+
+h2 {
+  font-size: fs(800);
+  font-weight: 700;
+  margin-bottom: size(20);
+  line-height: 55px;
+}
+
+h3 {
+  font-size: fs(700);
+  font-weight: 600;
+  margin-bottom: size(18);
+}
+
+h4 {
+  font-size: fs(600);
+  font-weight: 600;
+  margin-bottom: size(16);
+}
+
+h5 {
+  font-size: fs(550);
+  font-weight: 600;
+  margin-bottom: size(12);
+}
+
+h6 {
+  font-size: fs(500);
+  font-weight: 500;
+  margin-bottom: size(12);
+}
+
+input, textarea {
+  &::placeholder {
+    color: clr(neutral, 400);
+  }
+  &:disabled {
+    background-color: clr(neutral, 100);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &:focus {
+    outline: none;
+    border-color: clr(secondary, 400);
+    box-shadow: 0 0 0 3px rgba(clr(secondary, 500), 0.5);
+  }
+  transition: 250ms ease-in-out;
+}
+

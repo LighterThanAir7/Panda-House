@@ -1,0 +1,15 @@
+@use "../abstract" as *;
+
+.daily-fresh {
+  margin-top: -#{size(120)};
+  @include d-flex($ai: center);
+  &__content {
+    padding-left: size(96);
+    h3 {
+      max-width: 300px;
+    }
+  }
+  &__desc {
+    max-width: 400px;
+  }
+}

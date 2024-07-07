@@ -1,0 +1,106 @@
+@use "../abstract" as *;
+
+.menu {
+  &-tabbing {
+    &__category, &__subcategory {
+      @include d-flex($g: size(20));
+      flex-wrap: wrap;
+      margin-bottom: size(40);
+    }
+    &__category {
+      padding-bottom: size(20);
+      border-bottom: 2px solid clr(secondary, 400);
+    }
+    &__subcategory {
+      &-title {
+        padding-bottom: size(16);
+        margin-bottom: size(32);
+        border-bottom: 1px solid clr(neutral, 200);
+      }
+    }
+    &__item {
+      
+    }
+    &__link {
+      min-width: 130px;
+      text-transform: uppercase;
+      border-radius: size(32);
+      &:hover {
+        color: clr(neutral, 50);
+        border-color: clr(secondary, 500);
+        background-color: clr(secondary, 500);
+      }
+      &--active {
+        color: clr(neutral, 50);
+        border-color: clr(secondary, 500);
+        background-color: clr(secondary, 500);
+      }
+      &-clear {
+        border-radius: size(32);
+      }
+    }
+  }
+  &__heading {
+    padding-top: size(48);
+  }
+
+  // Products
+
+  &__items {
+    row-gap: size(40);
+  }
+  &__item {
+    padding: size(40);
+    border-radius: size(16);
+    border: 1px solid clr(neutral, 300);
+    transition: 250ms ease;
+    &--active {
+      border-color: clr(secondary, 500) !important;
+      box-shadow: 0 0 8px 0px rgba(clr(secondary, 500), 0.2);
+    }
+    &:hover {
+      border-color: clr(neutral, 400);
+      .menu__item-order .add-to-cart {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    &-price {
+      user-select: none;
+      cursor: default;
+    }
+    &-head {
+      @include d-flex($jc: space-between);
+    }
+    &-desc {
+      margin-bottom: size(24);
+    }
+    &-order {
+      @include d-flex($jc: space-between);
+      .add-to-cart {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.add-to-cart {
+  &__number {
+    width: 60px;
+    text-align: center;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+  }
+  &__change-amount {
+    &:hover {
+      border-color: clr(neutral, 400);
+      background-color: clr(neutral, 100);
+    }
+  }
+  &:hover {
+    border-color: clr(neutral, 400);
+    background-color: clr(neutral, 100);
+  }
+}

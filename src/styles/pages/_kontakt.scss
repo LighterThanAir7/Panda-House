@@ -1,0 +1,19 @@
+@use "../abstract" as *;
+
+.kontakt {
+  display: flex;
+  padding-top: 150px;
+  padding-bottom: 180px;
+  &__info {
+    display: flex;
+    width: 33%;
+  }
+  &__icon {
+    font-size: fs(900);
+    margin-right: size(32);
+    color: clr(secondary, 400);
+  }
+  &__item {
+    font-size: fs(500);
+  }
+}

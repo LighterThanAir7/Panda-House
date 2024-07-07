@@ -1,0 +1,37 @@
+@use "../abstract" as *;
+
+.breadcrumb {
+  text-align: right;
+  &__list {
+    display: inline-flex;
+  }
+  &__item {
+    position: relative;
+    font-size: fs(600);
+    font-weight: 500;
+    &:first-child {
+      padding-right: size(18);
+    }
+    &:not(:first-child) {
+      padding-left: size(18);
+    }
+    &:last-child {
+      &:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 24px;
+        background: clr(neutral, 300);
+        top: 4px;
+        left: -2px;
+        transform: rotate(15deg);
+      }
+    }
+    &--current {
+      color: clr(secondary, 400);
+    }
+  }
+  &__link {
+
+  }
+}

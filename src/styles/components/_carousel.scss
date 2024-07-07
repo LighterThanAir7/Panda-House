@@ -1,0 +1,39 @@
+@use "../abstract" as *;
+
+.carousel {
+  &-container {
+    @include d-flex($ai: center);
+    position: relative;
+  }
+  display: flex;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  &__controls {
+    position: absolute;
+    top: -100px;
+    right: 0;
+    display: flex;
+    gap: size(8);
+  }
+  &__button {
+    color: clr(secondary, 400);
+    border: 2px solid clr(secondary, 400);
+    border-radius: 50%;
+    padding: size(8);
+    margin-right: size(8);
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+      color: clr(neutral, 50);
+      background-color: clr(secondary, 400);
+      border: 2px solid clr(secondary, 400);
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

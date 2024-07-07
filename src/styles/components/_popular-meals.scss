@@ -1,0 +1,40 @@
+@use "../abstract" as *;
+
+$meals-gap : size(40);
+
+.popular-meals {
+  gap: $meals-gap;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popular-meal {
+  flex-basis: calc(25% - $meals-gap);
+  position: relative;
+  img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 10;
+    transition: all 250ms ease-in-out;
+  }
+  &__info {
+    background-color: rgba(clr(neutral, 950), 0.8);
+    color: clr(neutral, 50);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: size(32);
+    font-size: fs(500);
+  }
+  &:hover {
+    box-shadow: 0 0 12px clr(neutral, 900);
+    img {
+      opacity: 20%;
+    }
+  }
+}

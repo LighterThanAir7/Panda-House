@@ -1,0 +1,125 @@
+@use "../abstract" as *;
+
+.nav {
+  @include d-flex($ai: center);
+  gap: size(32);
+  transition: padding-top 300ms ease;
+  &__list {
+    @include d-flex();
+    gap: size(32);
+  }
+  &__item {
+
+  }
+  &__link {
+    padding-inline: size(4);
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: fs(500);
+    color: clr(neutral, 800);
+    transition: 300ms ease-in-out;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background-color: clr(secondary, 500);
+      transition: 300ms ease-in-out;
+    }
+    &:hover {
+      color: clr(secondary, 500);
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+  &__separator {
+    width: 2px;
+    height: 32px;
+    background-color: clr(neutral, 200);
+  }
+  &__user {
+    position: relative;
+    &-text {
+      cursor: pointer;
+      transition: 250ms ease-in-out;
+      font-size: fs(400);
+      font-weight: 500;
+      color: clr(neutral, 700);
+      &:hover {
+        color: clr(secondary, 500);
+      }
+    }
+  }
+  &__cart {
+    position: relative;
+    @include d-flex($jc: center, $ai:center, $g: size(10));
+    font-size: fs(500);
+    color: clr(secondary, 400);
+    border: 1px solid clr(neutral, 200);
+    border-radius: size(4);
+    padding: size(10) size(12);
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+    &:hover {
+      color: clr(secondary, 500);
+      border: 1px solid clr(secondary, 500);
+      box-shadow: 0 0 8px rgba(clr(secondary, 900), 0.1);
+    }
+    &-preview {
+      position: absolute;
+      top: 55px;
+      right: 0;
+      padding: size(16);
+      border-radius: size(8);
+      border: 1px solid clr(neutral, 200);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      &--open {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &__dropdown {
+    position: absolute;
+    bottom: -135px;
+    left: 4px;
+    padding: size(16);
+    border-radius: size(8);
+    border: 1px solid clr(neutral, 200);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    &--open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(10px);
+      background-color: white;
+    }
+    &-list {
+      padding-left: size(2);
+      display: flex;
+      flex-direction: column;
+      gap: size(16);
+    }
+    &-item {
+      transition: 250ms ease;
+      &:hover {
+        color: clr(secondary, 400)
+      }
+    }
+    &-btn {
+      display: flex;
+      align-items: center;
+      gap: size(8);
+      white-space: nowrap;
+      padding: size(4) size(16);
+    }
+  }
+}
+

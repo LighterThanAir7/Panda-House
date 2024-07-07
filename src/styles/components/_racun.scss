@@ -1,0 +1,55 @@
+@use "../abstract" as *;
+
+.racun {
+  &__item {
+    @include d-flex($ai: center);
+    padding: size(16) size(32);
+    border-bottom: 1px solid clr(secondary, 400);
+  }
+  &__artikl {
+    width: 70%;
+    &-content {
+
+    }
+  }
+  &__amount {
+    @include d-flex($jc: center);
+    width: 15%;
+  }
+  &__remove-item {
+    @include d-flex($jc: center);
+    width: 5%;
+    text-align: center;
+    &-content {
+      font-size: fs(600);
+      border: 1px solid transparent;
+      transition: 250ms ease;
+      padding: size(10);
+      border-radius: size(8);
+      cursor: pointer;
+      &:hover {
+        color: clr(primary, 500);
+        border-color: clr(primary, 500);
+      }
+    }
+  }
+  &__price {
+    width: 10%;
+    text-align: right;
+  }
+  &__ukupno {
+    @include d-flex($jc: space-between, $ai: center);
+    text-align: right;
+    padding: size(32);
+    &-add-more {
+
+    }
+    &-content {
+
+    }
+  }
+}
+
+.empty-cart {
+  @include d-flex($d: column, $ai: center);
+}

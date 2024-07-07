@@ -1,0 +1,26 @@
+@use "../abstract" as *;
+
+.poruka {
+  &-container {
+    @include d-flex($jc: center, $ai: center);
+    flex-direction: column;
+    height: 100%;
+  }
+  @include d-flex($ai: center);
+  flex-direction: column;
+  padding: size(40) size(96);
+  border-radius: size(16);
+  transition: 250ms ease-in-out;
+  &__text {
+    font-size: fs(600);
+    font-weight: 700;
+    color: clr(neutral, 50);
+    margin-bottom: size(24);
+  }
+  &--pozitivna {
+    background-color: clr(tertiary, 500);
+  }
+  &--negativna {
+    background-color: clr(primary, 500);
+  }
+}

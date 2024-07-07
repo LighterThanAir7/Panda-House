@@ -1,0 +1,47 @@
+@use "../abstract" as *;
+
+.auth {
+  @include d-flex($jc: center, $ai: center);
+  flex-direction: column;
+  min-height: 100%;
+  padding-block: size(64);
+  &__return {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 150ms ease-in-out;
+    color: clr(neutral, 600);
+    &-icon {
+      color: clr(secondary, 400);
+      border: 2px solid clr(secondary, 400);
+      border-radius: 50%;
+      padding: size(8);
+      margin-right: size(8);
+      transition: 150ms ease-in-out;
+    }
+    &:hover {
+      scale: 1.05;
+      color: clr(neutral, 800);
+      .prijava__return-icon {
+        color: clr(secondary, 500);
+        border: 2px solid clr(secondary, 500);
+      }
+    }
+  }
+  &__decoration {
+    position: fixed;
+    bottom: 0;
+    opacity: 60%;
+    &--left {
+      left: 14%;
+      width: 320px;
+      transform: rotateY(180deg);
+    }
+    &--right {
+      right: 17%;
+      width: 220px;
+    }
+  }
+}

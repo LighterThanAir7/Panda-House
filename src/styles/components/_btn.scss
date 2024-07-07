@@ -1,0 +1,90 @@
+@use "../abstract" as *;
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: size(8) size(32);
+  border-radius: size(8);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+  box-sizing: border-box;
+  color: clr(neutral, 500);
+  border: 1px solid clr(neutral, 300);
+  white-space: nowrap;
+  &:hover {
+    border-color: clr(neutral, 400);
+    background-color: clr(neutral, 100);
+  }
+  &--flex {
+    @include d-flex($jc: center, $ai: center, $g: size(16))
+  }
+  &--outline {
+    &:hover {
+      background-color: clr(neutral, 100);
+      border-color: clr(neutral, 500);
+    }
+  }
+  &--primary {
+    color: clr(neutral, 50);
+    border-color: clr(primary, 500);
+    background-color: clr(primary, 500);
+    &:hover {
+      background-color: clr(primary, 600);
+    }
+  }
+  &--outline-primary {
+    color: clr(neutral, 50);
+    border: 2px solid clr(primary, 100) !important;
+    background-color: transparent;
+    &:hover {
+      background-color: clr(primary, 700);
+    }
+  }
+  &--secondary {
+    color: clr(neutral, 50);
+    border-color: clr(secondary, 400) !important;
+    background-color: clr(secondary, 400);
+    &:hover {
+      background-color: clr(secondary, 500);
+    }
+  }
+  &--tertiary {
+    color: clr(neutral, 50);
+    border-color: clr(tertiary, 500) !important;
+    background-color: clr(tertiary, 500);
+    &:hover {
+      background-color: clr(tertiary, 600);
+    }
+  }
+  &--outline-secondary {
+    color: clr(secondary, 500);
+    border: 2px solid clr(secondary, 500) !important;
+    background-color: transparent;
+    &:hover {
+      color: clr(neutral, 50);
+      background-color: clr(secondary, 500);
+    }
+  }
+  &--outline-tertiary {
+    color: clr(neutral, 50);
+    border: 2px solid clr(tertiary, 100) !important;
+    background-color: transparent;
+    &:hover {
+      background-color: clr(tertiary, 600);
+    }
+  }
+  &--w-full {
+    width: 100%;
+  }
+  &--small {
+    font-size: fs(300);
+    padding: size(6) size(20);
+  }
+  &--big {
+    font-size: fs(500);
+    text-transform: uppercase;
+    padding: size(12) size(40);
+    border-radius: size(16);
+  }
+}

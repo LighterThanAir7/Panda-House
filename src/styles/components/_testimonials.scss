@@ -1,0 +1,40 @@
+@use "../abstract" as *;
+
+.testimonial {
+  flex: 0 0 calc(33.3333% - 13px);
+  scroll-snap-align: start;
+  padding: size(24);
+  border-radius: size(16);
+  border: 1px solid clr(neutral, 200);
+  transition: all 250ms ease;
+  &:hover {
+    border-color: clr(neutral, 300);
+    background-color: clr(secondary, 50);
+  }
+  &__img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+  &__text {
+    font-size: fs(300);
+    line-height: 24px;
+  }
+  &__stars {
+    display: flex;
+    font-size: fs(600);
+    &--pointer .testimonial__star:hover {
+      cursor: pointer;
+    }
+  }
+  &__star {
+    padding-inline: size(4);
+    color: clr(secondary, 400);
+    transition: scale 250ms ease;
+    &:hover {
+      scale: 1.15;
+      color: clr(secondary, 500);
+    }
+  }
+}

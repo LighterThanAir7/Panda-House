@@ -1,0 +1,32 @@
+@use "../abstract" as *;
+
+.banner {
+  @include d-flex($jc: space-between, $ai: center);
+  padding-top: 300px;
+  padding-bottom: 160px;
+  &__content {
+
+  }
+  &__title {
+    margin-bottom: size(12);
+  }
+  &__subtitle {
+    font-size: fs(600);
+    font-weight: 500;
+    color: clr(neutral, 600);
+    line-height: 42px;
+  }
+  &-home {
+    margin-top: size(96);
+  }
+}
+
+.slider-round {
+  height: 850px;
+  width: 850px;
+  background: clr(secondary, 500);
+  border-radius: 100%;
+  position: relative;
+  transform: translate(50%);
+  overflow: hidden;
+}

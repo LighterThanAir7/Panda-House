@@ -1,0 +1,50 @@
+@use "../abstract" as *;
+
+@each $size-name, $size-value in $sizes {
+  .m {
+    &-#{$size-name} {
+      margin: $size-value;
+    }
+    &t-#{$size-name} {
+      margin-top: $size-value;
+    }
+    &r-#{$size-name} {
+      margin-right: $size-value;
+    }
+    &b-#{$size-name} {
+      margin-bottom: $size-value;
+    }
+    &l-#{$size-name} {
+      margin-left: $size-value;
+    }
+    &y-#{$size-name} {
+      margin-block: $size-value;
+    }
+    &x-#{$size-name} {
+      margin-inline: $size-value;
+    }
+  }
+  .p {
+    &-#{$size-name} {
+      padding: $size-value;
+    }
+    &t-#{$size-name} {
+      padding-top: $size-value;
+    }
+    &r-#{$size-name} {
+      padding-right: $size-value;
+    }
+    &b-#{$size-name} {
+      padding-bottom: $size-value;
+    }
+    &l-#{$size-name} {
+      padding-left: $size-value;
+    }
+    &y-#{$size-name} {
+      padding-block: $size-value;
+    }
+    &x-#{$size-name} {
+      padding-inline: $size-value;
+    }
+  }
+}

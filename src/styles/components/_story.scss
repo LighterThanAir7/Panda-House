@@ -1,0 +1,13 @@
+@use "../abstract" as *;
+
+.story {
+  &__text {
+    font-size: fs(400);
+    font-weight: 500;
+    color: clr(neutral, 500);
+    line-height: 32px;
+  }
+  &__img {
+    border-radius: size(32);
+  }
+}

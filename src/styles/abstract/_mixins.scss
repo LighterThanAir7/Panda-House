@@ -1,0 +1,107 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:map";
+@use "sizes" as *;
+@use "breakpoints" as *;
+
+@mixin mq($size) {
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint: map-get($breakpoints, $size);
+    @media screen and (max-width: $breakpoint) {
+      @content;
+    }
+  } @else if meta.type-of($size) == number {
+    @if math.is-unitless($size) {
+      @error 'when using a number with @mq() make sure to include a unit';
+    } @else {
+      @media screen and (max-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'the keyword #{$size} is not in the $breakpoints map';
+  }
+}
+
+@mixin d-flex($d: null, $jc: null, $ai: null, $g: null) {
+  display: flex;
+  flex-direction: $d;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin font-face($family, $src, $format, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: "#{$family}";
+    src: url("#{$src}") format('#{$format}');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin stroke($color: #000, $size: 1px) {
+  text-shadow:
+    -#{$size} -#{$size} 0 $color,
+    0         -#{$size} 0 $color,
+    #{$size}  -#{$size} 0 $color,
+    #{$size}   0        0 $color,
+    #{$size}   #{$size} 0 $color,
+    0          #{$size} 0 $color,
+    -#{$size}  #{$size} 0 $color,
+    -#{$size}  0        0 $color;
+}
+
+@mixin triangle($size, $color, $posX: null, $posY: null) {
+  $reduceStep: 100;
+  $posX_flipped: null;
+
+  // Determine flipped positions
+  position: absolute;
+
+  @if $posX == 'left' {
+    left: 0;
+    $posX_flipped: "right";
+  } @else if $posX == 'right' {
+    right: 0;
+    $posX_flipped: "left";
+  }
+
+  @if $posY == 'top' {
+    top: 0;
+  } @else if $posY == 'bottom' {
+    bottom: 0;
+  }
+
+  // Triangle styles
+  @if $posX != null and $posY != null {
+    border-#{$posX_flipped}: $size solid transparent;
+    border-#{$posY}: $size solid $color;
+  } @else {
+    border-left: $size solid $color;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  }
+
+  // Media query adjustments
+  @include mq(xxl) {
+    $size-xxl: $size - $reduceStep;
+    border-#{$posX_flipped}: $size-xxl solid transparent;
+    border-#{$posY}: $size-xxl solid $color;
+  }
+  @include mq(xl) {
+    $size-xl: $size - (2 * $reduceStep); // Subtract $reduceStep twice for xl
+    border-#{$posX_flipped}: $size-xl solid transparent;
+    border-#{$posY}: $size-xl solid $color;
+  }
+  @include mq(lg) {
+    $size-lg: $size - (3 * $reduceStep); // Subtract $reduceStep thrice for lg
+    border-#{$posX_flipped}: $size-lg solid transparent;
+    border-#{$posY}: $size-lg solid $color;
+  }
+  @include mq(md) {
+    $size-lg: $size - (3.5 * $reduceStep); // Subtract $reduceStep thrice for lg
+    border-#{$posX_flipped}: $size-lg solid transparent;
+    border-#{$posY}: $size-lg solid $color;
+  }
+}

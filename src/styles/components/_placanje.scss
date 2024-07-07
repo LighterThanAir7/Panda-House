@@ -1,0 +1,37 @@
+@use "../abstract" as *;
+
+.placanje {
+  &__options {
+    @include d-flex($d: column, $g: size(12));
+    width: 460px;
+    margin-bottom: size(64);
+  }
+  &__save-data {
+    margin-bottom: size(40);
+    font-size: fs(200);
+    line-height: 20px;
+    color: clr(neutral, 400);
+    font-weight: 400;
+  }
+  &__discount {
+    font-size: fs(300);
+    line-height: 24px;
+  }
+  &__racun {
+    div:not(:last-child) {
+      border-bottom: 1px solid clr(neutral, 300);
+    }
+  }
+  &__popust {
+    @include d-flex($jc: space-between);
+  }
+  &__total {
+    @include d-flex($jc: space-between);
+    margin-bottom: size(20);
+    font-weight: 700;
+    &--border-top {
+      padding-top: size(6);
+      border-top: 1px solid clr(neutral, 300);
+    }
+  }
+}

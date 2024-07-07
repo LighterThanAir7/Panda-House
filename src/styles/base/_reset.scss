@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border: none;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+button {
+  all: unset;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.relative {
+  position: relative;
+}
